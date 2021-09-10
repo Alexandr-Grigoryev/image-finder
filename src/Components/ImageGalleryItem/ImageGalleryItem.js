@@ -1,8 +1,8 @@
-// import { Component } from "react";
-// import s from "./Searchbar.module.css";
+import s from "./ImageGalleryItem.module.css";
 
-{
-  /* <li className={s.ImageGalleryItem}>
-  <img src="" alt="" className={s.ImageGalleryItemImage} />
-</li>; */
-}
+const ImageGalleryItem = ({ URL }) => (
+  <li className={s.ImageGalleryItem}>
+    <img src={`${URL}`} alt="" className={s.ImageGalleryItemImage} />
+  </li>
+);
+export default ImageGalleryItem;

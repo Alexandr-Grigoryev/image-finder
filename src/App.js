@@ -3,6 +3,8 @@ import { ToastContainer } from "react-toastify";
 import Container from "./Components/Container/Container";
 import Searchbar from "./Components/Searchbar/Searchbar";
 import ImageGallery from "./Components/ImageGallery/ImageGallery";
+import LoadMoreButton from "./Components/Button/Button";
+
 // import ImageGalleryItem from "./Components/ImageGalleryItem/ImageGalleryItem";
 // import shortid from "shortid";
 
@@ -20,6 +22,7 @@ export default class App extends Component {
         <ImageGallery searchQuery={this.state.searchQuery}>
           {/* <ImageGalleryItem /> */}
         </ImageGallery>
+        <LoadMoreButton />
         <ToastContainer
           position="top-right"
           autoClose={3000}
