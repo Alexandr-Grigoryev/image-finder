@@ -1,8 +1,8 @@
 import s from "./Button.module.css";
 
-const LoadMoreButton = ({ onLoadMore }) => (
+const Button = ({ onLoadMore }) => (
   <button className={s.Button} type="button" onClick={onLoadMore}>
     <span>Load more</span>
   </button>
 );
-export default LoadMoreButton;
+export default Button;
