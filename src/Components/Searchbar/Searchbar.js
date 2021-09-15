@@ -1,6 +1,5 @@
 import { Component } from "react";
 import s from "./Searchbar.module.css";
-// import { ImSearch } from "react-icons/im";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -48,7 +47,6 @@ export default class Searchbar extends Component {
             autoComplete="on"
             autoFocus
             placeholder="Search images and photos"
-            // name="pokemonName"
             value={this.state.searchQuery}
             onChange={this.handleNameChange}
           />

@@ -8,8 +8,6 @@ import ImageGallery from "./Components/ImageGallery/ImageGallery";
 import Button from "./Components/Button/Button";
 import s from "../src/Components/Loader/Loader.module.css";
 
-// import shortid from "shortid";
-
 export default class App extends Component {
   state = {
     searchQuery: "",
@@ -21,7 +19,6 @@ export default class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     const prevSearchQuery = prevState.searchQuery;
     const nextSearchQuery = this.state.searchQuery;
-    console.log(this.state.images);
 
     if (prevSearchQuery !== nextSearchQuery) {
       this.setState({ loading: true });
@@ -44,7 +41,18 @@ export default class App extends Component {
         )
         .finally(() => this.setState({ loading: false }));
     }
+
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
   }
+
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
 
   handleFormSubmit = (searchQuery) => {
     this.setState({ searchQuery });
@@ -70,7 +78,10 @@ export default class App extends Component {
             />
           </div>
         )}
-        <ImageGallery imgArr={this.state.images}></ImageGallery>
+        <ImageGallery
+          imgArr={this.state.images}
+          toggleModal={this.toggleModal}
+        ></ImageGallery>
         {this.state.images.length !== 0 && (
           <Button onLoadMore={this.loadMore} />
         )}
